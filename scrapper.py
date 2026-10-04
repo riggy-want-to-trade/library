@@ -162,8 +162,8 @@ class YFinance:
 
 class scrapper():
 
-    stock_price_shenzhen = r"/home/ricky/Documents/Stockid_data/list_of_shenzhen.txt"
-    stock_price_shanghai = r"/home/ricky/Documents/Stockid_data/list_of_shanghai.txt"
+    stock_price_shenzhen = r"stock_list/list_of_shenzhen.txt"
+    stock_price_shanghai = r"stock_list/list_of_shanghai.txt"
     stock_price_america = r"stock_list/nasdaqlisted.txt"
     list_for_shanghai =[]
     list_for_shenzhen =[]
@@ -477,7 +477,7 @@ class scrapper():
         for string in strings:
             string= string.split(" ",1)[0]
             # print(string)
-            self.list_for_shenzhen.append(string)
+            self.list_for_shenzhen.append(string+".SZ")
         
         self.write_to_file(self.list_for_shenzhen,"SZ")
 
@@ -490,7 +490,7 @@ class scrapper():
         for string in strings:
             string= string.split(" ",1)[0]
             # print(string)
-            self.list_for_shanghai.append(string)
+            self.list_for_shanghai.append(string+".SS")
 
         self.write_to_file(self.list_for_shanghai,"SS")
 
@@ -499,10 +499,10 @@ class scrapper():
         self.shenzhen()
 
 def main():
-    s = scrapper("America")
-    s.America()
-    # s.shenzhen()
-    # s.shanghai()
+    s = scrapper("China")
+    # s.America()
+    s.shenzhen()
+    s.shanghai()
 
 class scapper_with_thread(scrapper):
     def write_to_file(self,index_list,area,full_scale=False):

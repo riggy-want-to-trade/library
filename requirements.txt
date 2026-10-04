@@ -1,5 +1,9 @@
 # akshare==1.14.61
 alembic==1.13.2
+# spike_screen service (versions match .venv)
+fastapi==0.141.1
+uvicorn==0.52.3
+pydantic==2.13.4
 attrs==23.2.0
 beautifulsoup4==4.12.3
 blinker==1.8.2

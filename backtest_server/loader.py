@@ -25,7 +25,7 @@ def _read_csv(filepath: str) -> pd.DataFrame:
 
     Expected format (no header, QUOTE_NONNUMERIC):
         "2021-07-19","2.91","2.99","2.65","2.98","650200"
-    Columns: Date, Close, High, Low, Open, Volume
+    Columns: Date, Open, High, Low, Close, Volume
     """
     df = pd.read_csv(
         filepath,

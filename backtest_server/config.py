@@ -21,5 +21,6 @@ PORT = int(os.environ.get("BACKTEST_PORT", "8000"))
 DEFAULT_CAPITAL = float(os.environ.get("BACKTEST_DEFAULT_CAPITAL", "100000.00"))
 DEFAULT_COMMISSION = float(os.environ.get("BACKTEST_DEFAULT_COMMISSION", "0.005"))
 
-# CSV column names (matching scrapper.py output)
-CSV_COLUMNS = ["Date", "Close", "High", "Low", "Open", "Volume"]
+# CSV column names (matching scrapper.py output — yfinance history() natural
+# order: Date, Open, High, Low, Close, Volume)
+CSV_COLUMNS = ["Date", "Open", "High", "Low", "Close", "Volume"]
